@@ -27,9 +27,9 @@ export const HubClerkProvider = ({ children }: PropsWithChildren) => {
 		}
 	}
 
-	// if (!import.meta.env.VITE_DOMAIN.match('http')) {
+	if (!import.meta.env.VITE_DOMAIN.match('http')) {
 		clerkProps.Clerk = getClerkInstance({ publishableKey: import.meta.env.VITE_CLERK_PUBLIC_KEY }) as unknown as ClerkProp
-	// }
+	}
 
 	return <ClerkProvider {...(clerkProps as ClerkProviderProps)}>{children}</ClerkProvider>
 }

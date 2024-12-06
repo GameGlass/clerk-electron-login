@@ -53,7 +53,6 @@ export const SignInForm = ({ className, ...props }: SignInTypes) => {
 	})
 
 	useEffect(() => {
-    debugger
 		if (session && isSignedIn) {
 			void router.invalidate().then(() => {
 				return navigate({ to: '/' })
