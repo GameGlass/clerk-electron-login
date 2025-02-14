@@ -151,8 +151,7 @@ const createWindow = async () => {
     (details, callback) => {
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
-      details.responseHeaders["access-control-allow-origin"] =
-        import.meta.env.VITE_DOMAIN;
+      details.responseHeaders["access-control-allow-origin"] = import.meta.env.VITE_DOMAIN;
 
       if (details.responseHeaders?.location) {
         details.responseHeaders.location = [`${uiSource}#/sso-callback`];
